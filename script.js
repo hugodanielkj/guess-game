@@ -24,17 +24,17 @@ function restartGame() {
 function runGame() {
   const userGuess = Number(document.querySelector(".input").value);
 
-  //Wrong Guess Case
-  if (userGuess !== randomNum) {
+  //Non-existing Guess Case
+  if (!userGuess || userGuess > 20 || userGuess < 20) {
+    alert("Put a number between 1-20!");
+
+    //Wrong Guess Case
+  } else if (userGuess !== randomNum) {
     score--;
     document.querySelector(".score").textContent = score;
     document.querySelector("body").style.backgroundColor = "red";
     document.querySelector(".result").textContent =
       userGuess > randomNum ? "Too high!" : "Too low";
-
-    //Non-existing Guess Case
-  } else if (!userGuess) {
-    alert("Put a number between 1-20!");
 
     //Right Guess Case
   } else {
