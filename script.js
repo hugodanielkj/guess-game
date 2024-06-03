@@ -25,7 +25,7 @@ function runGame() {
   const userGuess = Number(document.querySelector(".input").value);
 
   //Non-existing Guess Case
-  if (!userGuess || userGuess > 20 || userGuess < 20) {
+  if (!userGuess || userGuess > 20 || userGuess < 0) {
     alert("Put a number between 1-20!");
 
     //Wrong Guess Case
